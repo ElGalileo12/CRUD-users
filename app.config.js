@@ -1,0 +1,60 @@
+export default ({ config }) => ({
+  ...config,
+  name: "Finazauto",
+  slug: "Finazauto",
+  version: "1.0.0",
+  orientation: "portrait",
+  icon: "./assets/icon.png",
+  userInterfaceStyle: "light",
+  newArchEnabled: true,
+  splash: {
+    image: "./assets/splash-icon.png",
+    resizeMode: "contain",
+    backgroundColor: "#ffffff",
+  },
+  ios: {
+    supportsTablet: true,
+    jsEngine: "jsc",
+    bundleIdentifier: "com.elgalileo.Finazauto",
+    infoPlist: {
+      ITSAppUsesNonExemptEncryption: false,
+    },
+  },
+  android: {
+    adaptiveIcon: {
+      foregroundImage: "./assets/adaptive-icon.png",
+      backgroundColor: "#ffffff",
+    },
+    edgeToEdgeEnabled: true,
+    jsEngine: "jsc",
+    package: "com.elgalileo.Finazauto",
+  },
+  web: {
+    favicon: "./assets/favicon.png",
+    jsEngine: "hermes",
+  },
+  extra: {
+    eas: {
+      projectId: "0f7b2e66-f5c5-434a-9674-baed3a8daac0",
+    },
+    API_URL: process.env.API_URL,
+    API_KEY: process.env.API_KEY,
+  },
+  plugins: [
+    [
+      "expo-build-properties",
+      {
+        android: {
+          compileSdkVersion: 35,
+          targetSdkVersion: 35,
+          minSdkVersion: 24,
+          kotlinVersion: "2.0.21",
+        },
+      },
+    ],
+  ],
+  updates: {
+    url: "https://u.expo.dev/0f7b2e66-f5c5-434a-9674-baed3a8daac0",
+  },
+  runtimeVersion: "1.0.0",
+});
