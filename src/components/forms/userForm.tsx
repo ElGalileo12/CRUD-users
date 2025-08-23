@@ -101,7 +101,15 @@ export default function UserForm({
   // Función que envía el formulario solo si es editable
   const submit: SubmitHandler<UserFormValues> = async (values) => {
     if (!editable) return;
-    await onSubmit?.(values);
+    setTimeout(async () => {
+      try {
+        if (onSubmit) {
+          await onSubmit(values);
+        }
+      } catch (error) {
+        console.error("Error en onSubmit:", error);
+      }
+    }, 300);
   };
 
   return (

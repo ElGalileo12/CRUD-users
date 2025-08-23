@@ -14,7 +14,11 @@
     },
     "ios": {
       "supportsTablet": true,
-      "jsEngine": "jsc"
+      "jsEngine": "jsc",
+      "bundleIdentifier": "com.elgalileo.Finazauto",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -33,6 +37,19 @@
       "eas": {
         "projectId": "0f7b2e66-f5c5-434a-9674-baed3a8daac0"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "minSdkVersion": 24,
+            "kotlinVersion": "2.0.21"
+          }
+        }
+      ]
+    ]
   }
 }
